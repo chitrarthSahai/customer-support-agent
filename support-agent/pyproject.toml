@@ -1,0 +1,24 @@
+[project]
+name = "support-agent"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "chitrarthSahai",email = "39397643+chitrarthSahai@users.noreply.github.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi (>=0.135.1,<0.136.0)"
+]
+
+[tool.poetry]
+packages = [{include = "support_agent", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pre-commit (>=4.5.1,<5.0.0)"
+]
