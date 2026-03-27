@@ -1,0 +1,33 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "Customer support backend"
+authors = [{ name = "chitrarthSahai", email = "39397643+chitrarthSahai@users.noreply.github.com" }]
+requires-python = ">=3.12"
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+dependencies = [
+    "dotenv>=0.9.9",
+    "fastapi (>=0.135.1,<0.136.0)",
+    "pydantic>=2.12.5",
+    "sqlalchemy>=2.0.48",
+]
+
+[tool.uv.build-backend]
+module-name = ["backend"]
+module-root = ""
+namespace = true
+
+[build-system]
+requires = ["uv_build>=0.10.11,<0.11.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pre-commit (>=4.5.1,<5.0.0)"
+]
