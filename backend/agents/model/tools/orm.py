@@ -1,6 +1,7 @@
 import datetime
 
 from agents.model.agent.orm import Agent
+from agents.model.skills.orm import Skill
 from core.database import Base
 from sqlalchemy import DateTime, Enum, ForeignKey, Integer, String, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
@@ -19,6 +20,7 @@ class Tools(Base):
     deleted_at = Mapped[DateTime] = mapped_column(DateTime, nullable=True)
 
     agents = Mapped[list["Agent"]] = relationship("Agent", secondary="agent_tools", back_populates="tools")
+    skills = Mapped[list["Skill"]] = relationship("Skill", secondary="skill_tools", back_populates="tools")
 
 
 class AgentTool(Base):

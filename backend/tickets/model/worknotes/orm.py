@@ -16,6 +16,7 @@ class Attachment(Base):
     __tablename__ = "attachment"
 
     id = Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    filename = Mapped[str] = mapped_column(String(255), nullable=False)
     url = Mapped[str] = mapped_column(String(255), nullable=False)
     type = Mapped[AttachmentTypeEnum] = mapped_column(ForeignKey("attachment_type.value"), nullable=False)
     created_at = Mapped[DateTime] = mapped_column(DateTime, nullable=False, default_factory=datetime.datetime.utcnow)
