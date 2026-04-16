@@ -12,6 +12,7 @@ class Agent(Base):
     name = Mapped[str] = mapped_column(String(255), nullable=False)
     url = Mapped[str] = mapped_column(String(255), nullable=True)
     prompt = Mapped[str] = mapped_column(Text, nullable=True)
+    tool_ids = Mapped[list[int]] = mapped_column(ForeignKey("tools.id"), nullable=True)
     skill_ids = Mapped[list[int]] = mapped_column(ForeignKey("skills.id"), nullable=True)
     description = Mapped[str] = mapped_column(String(255), nullable=True)
     created_at = Mapped[DateTime] = mapped_column(DateTime, nullable=False, default_factory=datetime.datetime.utcnow)
