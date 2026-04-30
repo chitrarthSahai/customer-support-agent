@@ -1,7 +1,5 @@
 from typing import List, Optional
-
 from pydantic import BaseModel, HttpUrl
-
 
 class AgentCreateRequest(BaseModel):
     name: str
@@ -10,7 +8,6 @@ class AgentCreateRequest(BaseModel):
     prompt: str
     skills: List[int]
     tools: List[int]
-
 
 class AgentUpdateRequest(BaseModel):
     name: Optional[str]
@@ -58,12 +55,12 @@ class AgentExecutionListResponse(BaseModel):
 class AgentLogCreateRequest(BaseModel):
     agentId: int
     toolId: int
-    payload: str
+    payload: dict
 
 class AgentLogReadResponse(BaseModel):
     id: int
     agentId: int
     toolId: int
-    payload: str
+    payload: dict
     createdAt: str
-
+    updatedAt: str
